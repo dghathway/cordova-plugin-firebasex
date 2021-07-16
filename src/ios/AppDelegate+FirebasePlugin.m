@@ -223,7 +223,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 // Scans a message for keys which indicate a notification should be shown.
 // If found, extracts relevant keys and uses then to display a local notification
 -(void)processMessageForForegroundNotification:(NSDictionary*)messageData {
-    bool showForegroundNotification = [messageData objectForKey:@"notification_foreground"];
+    //bool showForegroundNotification = [messageData objectForKey:@"notification_foreground"];
+    bool showForegroundNotification = true;
     if(!showForegroundNotification){
         return;
     }
@@ -382,7 +383,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
             return;
         }
         
-        bool showForegroundNotification = [mutableUserInfo objectForKey:@"notification_foreground"];
+        //bool showForegroundNotification = [mutableUserInfo objectForKey:@"notification_foreground"];
+        bool showForegroundNotification = true;
+        
         bool hasAlert = [aps objectForKey:@"alert"] != nil;
         bool hasBadge = [aps objectForKey:@"badge"] != nil;
         bool hasSound = [aps objectForKey:@"sound"] != nil;
